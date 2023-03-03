@@ -24,6 +24,7 @@
    installation
    contributing
    auto_gallery/index
+   ankit
    tutorial
    analysis
    api_reference
