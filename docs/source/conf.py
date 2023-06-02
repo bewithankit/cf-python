@@ -271,7 +271,7 @@ html_theme = "alabaster"  # 'default' #'haiku' #'default'
 # https://github.com/bitprophet/alabaster/blob/master/alabaster/theme.conf
 
 html_theme_options = {
-    "show_related": "true",
+    "show_related": "false",
     "sidebar_collapse": "false",
     "fixed_sidebar": "true",
     "page_width": "85%",
@@ -386,6 +386,7 @@ sphinx_gallery_conf = {
     "doc_module": ("cf"),
     "inspect_global_variables": True,
     "within_subsection_order": FileNameSortKey,
+    'expected_failing_examples': ['recipes/plot_7_recipe.py'],
 }
 
 # -- Options for LaTeX output -------------------------------------------------

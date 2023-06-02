@@ -26,7 +26,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tutorial" href="../tutorial.html" />
+    <link rel="next" title="Plotting a joint histogram" href="plot_9_recipe.html" />
     <link rel="prev" title="Plotting members of a model ensemble" href="plot_7_recipe.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -75,7 +75,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html"><strong>Introduction</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cf_data_model.html"><strong>CF data model</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html"><strong>Installation</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../contributing.html"><strong>Contributing</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cheat_sheet.html"><strong>Cheat Sheet</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="index.html"><strong>Recipes using cf</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial.html"><strong>Tutorial</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../analysis.html"><strong>Analysis</strong></a></li>
@@ -84,6 +84,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../performance.html"><strong>Performance</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../releases.html"><strong>Releases</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Changelog.html"><strong>Change log</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html"><strong>Contributing</strong></a></li>
 </ul>
 <div class="relations">
 <h3>Related Topics</h3>
@@ -91,7 +92,7 @@
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="index.html"><strong>Recipes using cf</strong></a><ul>
       <li>Previous: <a href="plot_7_recipe.html" title="previous chapter">Plotting members of a model ensemble</a></li>
-      <li>Next: <a href="../tutorial.html" title="next chapter"><strong>Tutorial</strong></a></li>
+      <li>Next: <a href="plot_9_recipe.html" title="next chapter">Plotting a joint histogram</a></li>
   </ul></li>
   </ul></li>
 </ul>
@@ -183,9 +184,9 @@ to download the full example code</p>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Field: long_name=blended air_temperature_anomaly over land with sea_water_temperature_anomaly (ncvar%tas_mean)
 --------------------------------------------------------------------------------------------------------------
-Data            : long_name=blended air_temperature_anomaly over land with sea_water_temperature_anomaly(time(2074), latitude(36), longitude(72)) K
-Cell methods    : area: mean (interval: 5.0 degrees_north) time(2074): mean (interval: 1 month) realization(1): mean
-Dimension coords: time(2074) = [1850-01-16 12:00:00, ..., 2022-10-16 12:00:00] gregorian
+Data            : long_name=blended air_temperature_anomaly over land with sea_water_temperature_anomaly(time(2079), latitude(36), longitude(72)) K
+Cell methods    : area: mean (interval: 5.0 degrees_north) time(2079): mean (interval: 1 month) realization(1): mean
+Dimension coords: time(2079) = [1850-01-16 12:00:00, ..., 2023-03-16 12:00:00] gregorian
                 : latitude(36) = [-87.5, ..., 87.5] degrees_north
                 : longitude(72) = [-177.5, ..., 177.5] degrees_east
                 : realization(1) = [100] 1
@@ -279,7 +280,17 @@ and <a class="reference external" href="http://ajheaps.github.io/cf-plot/stipple
 <a href="https://ajheaps.github.io/cf-plot/gclose.html#cfplot.gclose" title="cfplot.gclose" class="sphx-glr-backref-module-cfplot sphx-glr-backref-type-py-function"><span class="n">cfp</span><span class="o">.</span><span class="n">gclose</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_plot_8_recipe_001.png" srcset="../_images/sphx_glr_plot_8_recipe_001.png" alt="plot 8 recipe" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  28.188 seconds)</p>
+<img src="../_images/sphx_glr_plot_8_recipe_001.png" srcset="../_images/sphx_glr_plot_8_recipe_001.png" alt="plot 8 recipe" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Warning - boolean data found - converting to integers
+
+
+
+
+
+
+Warning - boolean data found - converting to integers
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  23.072 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-recipes-plot-8-recipe-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/plot_8_recipe.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_8_recipe.py</span></code></a></p>
@@ -299,11 +310,11 @@ and <a class="reference external" href="http://ajheaps.github.io/cf-plot/stipple
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2023, NCAS | Page built on 2023-04-27.
+      &copy;2023, NCAS | Page built on 2023-06-02.
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>
 

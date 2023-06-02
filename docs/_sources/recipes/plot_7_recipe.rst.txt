@@ -104,20 +104,20 @@ In this recipe, we will plot the members of a model ensemble.
     experiment = '451 = SODAsi.3 pentad 8 member SSTs climatologically adjusted to
                   HadISST2.3 1981 to 2010 climatology'
     forecast_init_type = 3
-    history = 'Mon Apr 15 00:59:16 2019: cdo -v -f nc4 -r
+    history = 'Mon Apr 15 01:07:27 2019: cdo -v -f nc4 -r
                setpartabn,/global/homes/l/lslivins/convert_grb2_netcdf/cdo_table
-               -copy -setreftime,1800-01-01,00:00:00,3hours PRMSL.1941_004.grb
-               PRMSL.1941_mem004.nc'
+               -copy -setreftime,1800-01-01,00:00:00,3hours PRMSL.1941_054.grb
+               PRMSL.1941_mem054.nc'
     institution = 'NOAA ESRL Physical Sciences Division & CU/CIRES \n'
     long_name = 'Pressure reduced to MSL'
     observations = 'International Surface Pressure Databank version 4.7'
     original_name = 'prmsl'
     param = '1.3.0'
     platform = 'Model'
-    realization = 4
+    realization = 54
     units = 'Pa'
 
-    Data(time(2920), latitude(256), longitude(512)) = [[[101351.0, ..., 100562.0]]] Pa
+    Data(time(2920), latitude(256), longitude(512)) = [[[100301.0, ..., 100710.0]]] Pa
 
     Domain Axis: latitude(256)
     Domain Axis: longitude(512)
@@ -177,7 +177,7 @@ In this recipe, we will plot the members of a model ensemble.
     Dimension coords: time(2920) = [1941-01-01 00:00:00, ..., 1941-12-31 21:00:00] proleptic_gregorian
                     : latitude(256) = [89.46282196044922, ..., -89.46282196044922] degrees_north
                     : longitude(512) = [0.0, ..., 359.2330017089844] degrees_east
-    Auxiliary coords: id%realization(id%realization(5)) = [1, ..., 5]
+    Auxiliary coords: id%realization(id%realization(5)) = [3, ..., 54]
 
 
 
@@ -248,12 +248,20 @@ A moving average of the ensemble along the time axis, with a window size of 90 (
     cfp.gclose()
 
 
+.. rst-class:: sphx-glr-script-out
 
-.. image-sg:: /recipes/images/sphx_glr_plot_7_recipe_001.png
-   :alt: Model Ensemble Pressure
-   :srcset: /recipes/images/sphx_glr_plot_7_recipe_001.png
-   :class: sphx-glr-single-img
+.. code-block:: pytb
 
+    Traceback (most recent call last):
+      File "/home/ankit/cf-python/docs/source/recipes/plot_7_recipe.py", line 48, in <module>
+        ensemble.subspace(
+      File "/home/ankit/cf-python/cf/subspacefield.py", line 289, in __call__
+        raise error
+      File "/home/ankit/cf-python/cf/subspacefield.py", line 284, in __call__
+        out = field[indices]
+      File "/home/ankit/cf-python/cf/field.py", line 427, in __getitem__
+        raise IndexError(
+    IndexError: Indices [dask.array<isclose, shape=(5,), dtype=bool, chunksize=(1,), chunktype=numpy.ndarray>, slice(None, None, None), [0], [0]] result in a subspaced shape of (0, 2920, 1, 1), but can't create a subspace of Field that has a size 0 axis
 
 
 
@@ -261,7 +269,7 @@ A moving average of the ensemble along the time axis, with a window size of 90 (
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  35.758 seconds)
+   **Total running time of the script:** ( 0 minutes  3.313 seconds)
 
 
 .. _sphx_glr_download_recipes_plot_7_recipe.py:
