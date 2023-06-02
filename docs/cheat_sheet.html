@@ -140,7 +140,7 @@ cf-python.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><blockquote>
+<tr class="row-even"><td rowspan="2"><blockquote>
 <div><p><strong>Install</strong></p>
 </div></blockquote>
 <p><a class="reference internal" href="installation.html#installation"><span class="std std-ref">see more</span></a></p>
@@ -151,8 +151,7 @@ cf-python.</p>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td></td>
-<td><p><em>Install cf-python with all of its required and optional dependencies, and the cf-plot visualisation package using conda:</em></p>
+<tr class="row-odd"><td><p><em>Install cf-python with all of its required and optional dependencies, and the cf-plot visualisation package using conda:</em></p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>cf-python<span class="w"> </span>cf-plot<span class="w"> </span>udunits2<span class="w"> </span>esmpy&gt;<span class="o">=</span><span class="m">8</span>.0.0
 </pre></div>
 </div>
@@ -170,7 +169,7 @@ cf-python.</p>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><blockquote>
+<tr class="row-odd"><td rowspan="6"><blockquote>
 <div><p><strong>Read</strong></p>
 </div></blockquote>
 <p><a class="reference internal" href="tutorial.html#reading-datasets"><span class="std std-ref">see more</span></a></p>
@@ -182,31 +181,27 @@ cf-python.</p>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td></td>
-<td><p><em>Read the field constructs from two or more files:</em></p>
+<tr class="row-even"><td><p><em>Read the field constructs from two or more files:</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fl</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">read</span><span class="p">([</span><span class="s1">&#39;temperature.nc&#39;</span><span class="p">,</span> <span class="s1">&#39;precipitation_flux.nc&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td></td>
-<td><p><em>Read the field constructs using the * wildcard character
+<tr class="row-odd"><td><p><em>Read the field constructs using the * wildcard character
 (which reads all files in the directory that match the specified pattern):</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fl</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;~/file*.nc&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td></td>
-<td><p><em>Return field constructs by selecting the elements of the resulting * wildcard file list:</em></p>
+<tr class="row-even"><td><p><em>Return field constructs by selecting the elements of the resulting * wildcard file list:</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fl</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;~/file*.nc&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;~/file*nc&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td></td>
-<td><p><em>Return field constructs whose identities match the given values:</em></p>
+<tr class="row-odd"><td><p><em>Return field constructs whose identities match the given values:</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fl</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;~/file*.nc&#39;</span><span class="p">,</span> <span class="n">select</span><span class="o">=</span><span class="s1">&#39;units=hPa&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fl</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;~/file*.nc&#39;</span><span class="p">,</span> <span class="n">select</span><span class="o">=</span><span class="s1">&#39;air_temperature&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">fl</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;~/cf-python/docs/source/sample_files/file*.nc&#39;</span><span class="p">,</span> <span class="n">select</span><span class="o">=</span><span class="s1">&#39;ncvar%q&#39;</span><span class="p">)</span>
@@ -214,8 +209,7 @@ cf-python.</p>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p><em>Select a field from a field list by identity:</em></p></td>
-<td><p><strong>Selecting field:</strong></p>
+<tr class="row-even"><td><p><strong>Selecting field:</strong></p>
 <p><em>Select a field directly by index while reading the file:</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">temp</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;file.nc&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
@@ -230,7 +224,7 @@ cf-python.</p>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><blockquote>
+<tr class="row-odd"><td rowspan="2"><blockquote>
 <div><p><strong>Write</strong></p>
 </div></blockquote>
 <p><a class="reference internal" href="tutorial.html#writing-to-a-netcdf-dataset"><span class="std std-ref">see more</span></a></p>
@@ -241,14 +235,13 @@ cf-python.</p>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td></td>
-<td><p><em>Convert PP and UM fields files to netCDF files:</em></p>
+<tr class="row-even"><td><p><em>Convert PP and UM fields files to netCDF files:</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pp</span><span class="p">,</span> <span class="s1">&#39;umfile1.nc&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><blockquote>
+<tr class="row-odd"><td rowspan="4"><blockquote>
 <div><p><strong>Collapse</strong></p>
 </div></blockquote>
 <p><a class="reference external" href="https://ncas-cms.github.io/cf-python/method/cf.Field.collapse.html">see more</a></p>
@@ -261,8 +254,7 @@ cf-python.</p>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td></td>
-<td><p><strong>Weighted collapses:</strong></p>
+<tr class="row-even"><td><p><strong>Weighted collapses:</strong></p>
 <p><em>Weighted time average:</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">avg</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">collapse</span><span class="p">(</span><span class="s1">&#39;T: mean&#39;</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -277,8 +269,7 @@ cf-python.</p>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td></td>
-<td><p><strong>Specifying Axes:</strong></p>
+<tr class="row-odd"><td><p><strong>Specifying Axes:</strong></p>
 <p><em>Temporal maxima:</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">max</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">collapse</span><span class="p">(</span><span class="s1">&#39;maximum&#39;</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="s1">&#39;T&#39;</span><span class="p">)</span> <span class="c1"># or equivalently:</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">max</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">collapse</span><span class="p">(</span><span class="s1">&#39;T: maximum&#39;</span><span class="p">)</span>
@@ -291,8 +282,7 @@ cf-python.</p>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td></td>
-<td><p><strong>Grouped collapses:</strong></p>
+<tr class="row-even"><td><p><strong>Grouped collapses:</strong></p>
 <p><em>Annual maxima starting 1st December:</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">y_max</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">collapse</span><span class="p">(</span><span class="s1">&#39;T: maximum&#39;</span><span class="p">,</span> <span class="n">cf</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="mi">12</span><span class="p">))</span>
 </pre></div>
@@ -316,7 +306,7 @@ cf-python.</p>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><blockquote>
+<tr class="row-odd"><td rowspan="2"><blockquote>
 <div><p><strong>Subspace</strong></p>
 </div></blockquote>
 <p><a class="reference external" href="https://ncas-cms.github.io/cf-python/method/cf.Field.subspace.html">see more</a></p>
@@ -329,8 +319,7 @@ cf-python.</p>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td></td>
-<td><p><strong>Subspacing by metadata:</strong></p>
+<tr class="row-even"><td><p><strong>Subspacing by metadata:</strong></p>
 <p><em>Subspace to a new field construct whose ‘longitude’ coordinate spans only 45 degrees east, with the other domain axes remaining unchanged:</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">new</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">subspace</span><span class="p">(</span><span class="n">longitude</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span> <span class="c1"># or equivalently:</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">new</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">subspace</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
@@ -388,7 +377,7 @@ cf-python.</p>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><blockquote>
+<tr class="row-even"><td rowspan="2"><blockquote>
 <div><p><strong>Regridding</strong></p>
 </div></blockquote>
 <p><a class="reference internal" href="tutorial.html#regridding"><span class="std std-ref">see more</span></a></p>
@@ -411,8 +400,7 @@ cf-python.</p>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td></td>
-<td><p><strong>Regridding in cartesian coordinates:</strong></p>
+<tr class="row-odd"><td><p><strong>Regridding in cartesian coordinates:</strong></p>
 <p><em>Regrid the time axis ‘T’ of observational data with the linear method onto the grid specified in the dimension coordinate time:</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">time</span> <span class="o">=</span> <span class="n">cf</span><span class="o">.</span><span class="n">DimensionCoordinate</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">time</span><span class="o">.</span><span class="n">standard_name</span><span class="o">=</span><span class="s1">&#39;time&#39;</span>
